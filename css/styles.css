@@ -289,6 +289,15 @@ textarea {
     display: block;
     position: relative;
     margin-bottom: 10px;
+    color: var(--black-br-txt-cl);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--time-cubic);
+}
+
+.modal-contact-container:hover {
+    color: var(--accent-color);
 }
 
 .modal-contact {
@@ -311,13 +320,27 @@ textarea {
     padding-right: 6px;
     padding-bottom: 4px;
     padding-left: 42px;
+    
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: var(--time-cubic);
+}
+
+.contact-input:hover,
+.contact-input:focus{
+    border: 1px solid #2196F3;
+    border-radius: 4px;
 }
 
 .modal-contact-icon {
     position: absolute;
     left: 12px;
     transform: translateY(11px);
-    color: var(--black-br-txt-cl);
+    fill: currentColor;
 }
 
 .modal-comm-text {
@@ -371,7 +394,19 @@ textarea {
     line-height: 16px;
     letter-spacing: 0.01em;
     color: rgba(117, 117, 117, 0.5);
-    
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: var(--time-cubic);
+}
+
+.modal-comm:hover,
+.modal-comm:focus {
+    border: 1px solid #2196F3;
+    border-radius: 4px;
 }
 
 .text-agreed {
@@ -404,14 +439,26 @@ textarea {
     line-height: 1.88px;
     letter-spacing: 0.06em;
     color: var(--white-cl);
-    background-color: var(--light-blue-cl);
+    background: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     border: none;
     cursor: pointer;
+
+    transition-property: box-shadow, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: var(--time-cubic);
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+    background-color: var(--light-blue-cl);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
 
 /*Baner section*/
+
 .baner {
     padding: 200px 15px;
     max-width: 1600px;
@@ -946,7 +993,8 @@ textarea {
     font-size: 16px;
     line-height: 1.25;  
     letter-spacing: 0.03em;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--white-cl);
+    /* color: rgba(255, 255, 255, 0.6); */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.3);
