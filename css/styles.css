@@ -221,7 +221,7 @@ textarea {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);;
     opacity: 1;
-    transition: opacity 250ms var(--time-cubic);
+    transition: visibility 250ms var(--time-cubic), opacity 250ms var(--time-cubic);
 }
 
 .backdrop.is-hidden {
@@ -239,13 +239,13 @@ textarea {
     top: 50%;
     left: 50%;
     width: 528px;
-    height: 581px;
+    padding: 40px;
     background: var(--white-cl);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 450ms var(--time-cubic);
+    transition: visibility 250ms var(--time-cubic), opacity 250ms var(--time-cubic);
 }
 
 .close-button {
@@ -261,6 +261,7 @@ textarea {
     background: var(--white-cl);
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;  
+
 }
 
 .close-icon {
@@ -268,10 +269,6 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.modal-form {
-    padding: 40px;
 }
 
 .modal-text {
@@ -296,7 +293,8 @@ textarea {
     transition-timing-function: var(--time-cubic);
 }
 
-.modal-contact-container:hover {
+.modal-contact-container:hover,
+.modal-contact-container:focus {
     color: var(--accent-color);
 }
 
@@ -331,9 +329,9 @@ textarea {
 }
 
 .contact-input:hover,
-.contact-input:focus{
+.contact-input:focus {
     border: 1px solid #2196F3;
-    border-radius: 4px;
+    outline: none;
 }
 
 .modal-contact-icon {
@@ -341,7 +339,12 @@ textarea {
     left: 12px;
     transform: translateY(11px);
     fill: currentColor;
+    transition: fill 250ms var(--time-cubic)
 }
+
+.contact-input:focus ~ .modal-contact-icon {
+    fill: var(--accent-color);
+} 
 
 .modal-comm-text {
     display: block;
@@ -407,6 +410,7 @@ textarea {
 .modal-comm:focus {
     border: 1px solid #2196F3;
     border-radius: 4px;
+    outline: none;
 }
 
 .text-agreed {
@@ -759,7 +763,7 @@ textarea {
 .vissually-list {
     display: flex;
     justify-content: center;
-    margin-bottom: 34px;   
+    margin-bottom: 50px;   
 }
 
 .vissually-item {
@@ -971,7 +975,7 @@ textarea {
 
 .footer-subscribe {
     position: relative;
-    margin-left: 93px;
+    margin-left: auto;
 }
 
 .footer-form {
